@@ -33,12 +33,9 @@ git remote -v
 git remote update
 
 for branch in ${HEAD_BRANCHES}; do
-git checkout "origin/${BASE_REF}"
-git pull "origin/${BASE_REF}"
 git rebase --autosquash --autostash -s recursive -X patience \
 	"origin/${BASE_REF}" "origin/${branch}"
 git push --force origin "HEAD:${branch}"
-git reset --hard
 done
 
 exit 0
