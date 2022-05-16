@@ -42,7 +42,7 @@ git remote update
 for branch in ${HEAD_BRANCHES}; do
 echo "rebasing ${branch}" 
 git rebase \
-	"${BASE_REF}" "${branch}"
+	"origin/${BASE_REF}" "${branch}"
 echo "pushing ${branch}" 
 git push --force origin "${branch}"
 echo "pushed ${branch}" 
