@@ -41,7 +41,7 @@ git remote update
 # See https://git-scm.com/docs/git-rebase for options documentation
 for branch in ${HEAD_BRANCHES}; do
 echo "rebasing ${branch}" 
-git checkout -b "temp" "origin/${branch}"
+git checkout "origin/${branch}"
 git rebase \
 	origin/${BASE_REF}
 echo "pushing ${branch}" 
