@@ -40,9 +40,12 @@ git remote update
 
 # See https://git-scm.com/docs/git-rebase for options documentation
 for branch in ${HEAD_BRANCHES}; do
+echo "rebasing ${branch}" 
 git rebase \
 	"origin/${BASE_REF}" "origin/${branch}"
-git push --force origin "HEAD:${branch}"
+echo "pushing ${branch}" 
+git push --force origin "${branch}"
+echo "pushed ${branch}" 
 done
 
 exit 0
