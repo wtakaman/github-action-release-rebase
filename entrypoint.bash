@@ -45,7 +45,7 @@ git checkout -b "temp" "origin/${branch}"
 git rebase \
 	origin/${BASE_REF}
 echo "pushing ${branch}" 
-git push --force origin ${branch}
+git push --force "origin/${branch}"
 echo "pushed ${branch}" 
 done
 
