@@ -35,8 +35,8 @@ git remote -v
 git remote update
 
 for branch in ${HEAD_BRANCHES}; do
-git rebase --skip \
-	"origin/${BASE_REF}" "origin/${branch}"
+git checkout "origin/${branch}"
+git merge "origin/${BASE_REF}" 
 git push --force origin "HEAD:${branch}"
 done
 
