@@ -27,6 +27,7 @@ echo "BASE_REF=${BASE_REF}"
 echo "HEAD_BRANCHES=${HEAD_BRANCHES}"
 
 mkdir _tmp && cd _tmp
+git init
 
 git config user.name "Taka"
 git config user.email "takaman@gmail.com"
