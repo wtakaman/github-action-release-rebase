@@ -32,11 +32,12 @@ mkdir _tmp && cd _tmp
 git remote -v
 git remote update
 
-# See https://git-scm.com/docs/git-rebase for options documentation
 for branch in ${HEAD_BRANCHES}; do
+git checkout master
 git rebase --autosquash --autostash -s recursive -X patience \
 	"origin/${BASE_REF}" "origin/${branch}"
 git push --force origin "HEAD:${branch}"
+git reset --hard
 done
 
 exit 0
