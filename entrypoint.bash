@@ -37,8 +37,8 @@ git remote -v
 git remote update
 
 for branch in ${HEAD_BRANCHES}; do
-git switch "origin/${branch}"
-git merge "origin/${BASE_REF}" 
+git switch "${branch}"
+git merge "${BASE_REF}" 
 git push --force "${branch}"
 done
 
