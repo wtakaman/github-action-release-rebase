@@ -33,7 +33,7 @@ git remote -v
 git remote update
 
 for branch in ${HEAD_BRANCHES}; do
-git rebase --autosquash --autostash -s \
+git rebase \
 	"origin/${BASE_REF}" "origin/${branch}"
 git push --force origin "HEAD:${branch}"
 done
