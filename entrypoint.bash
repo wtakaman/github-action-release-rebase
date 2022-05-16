@@ -46,9 +46,8 @@ git rebase \
 	origin/${BASE_REF}
 echo "pushing ${branch}" 
 
-git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+git push --force origin "HEAD:${branch}"
 
-git push --force "origin/${branch}"
 echo "pushed ${branch}" 
 done
 
