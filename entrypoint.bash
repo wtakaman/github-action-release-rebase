@@ -28,6 +28,8 @@ echo "HEAD_BRANCHES=${HEAD_BRANCHES}"
 
 mkdir _tmp && cd _tmp
 
+git config user.name "Taka"
+git config user.email "takaman@gmail.com"
 
 git remote -v
 git remote update
