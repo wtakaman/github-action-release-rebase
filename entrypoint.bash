@@ -38,7 +38,7 @@ git remote update
 
 # See https://git-scm.com/docs/git-rebase for options documentation
 for branch in ${HEAD_BRANCHES}; do
-git rebase --autosquash --autostash -s recursive -X patience \
+git rebase --autosquash --autostash -s -m patience \
 	"origin/${BASE_REF}" "origin/${branch}"
 git push --force origin "HEAD:${branch}"
 done
