@@ -36,10 +36,13 @@ git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHU
 git remote -v
 git remote update
 
+# See https://git-scm.com/docs/git-rebase for options documentation
 for branch in ${HEAD_BRANCHES}; do
-git switch "${branch}"
-git merge "${BASE_REF}" 
-git push --force "${branch}"
+git rebase --autosquash --autostash -s recursive -X patience \
+	"origin/${BASE_REF}" "origin/${branch}"
+git push --force origin "HEAD:${branch}"
 done
+
+exit 0
 
 exit 0
