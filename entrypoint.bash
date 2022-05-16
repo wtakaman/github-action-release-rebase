@@ -39,7 +39,7 @@ git remote update
 for branch in ${HEAD_BRANCHES}; do
 git switch "origin/${branch}"
 git merge "origin/${BASE_REF}" 
-git push --force origin "${branch}"
+git push --force "${branch}"
 done
 
 exit 0
